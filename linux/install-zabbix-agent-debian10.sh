@@ -15,6 +15,9 @@ git clone https://github.com/linuxbuh/zabbix-agent.git
 
 cp /root/zabbix-agent/linux/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf
 
-service zabbix-agent restart
+ufw allow 10050:10051/tcp
+ufw allow 10050:10051/udp
 
-service zabbix-agent status
+systemctl restart zabbix-agent
+
+systemctl status zabbix-agent
