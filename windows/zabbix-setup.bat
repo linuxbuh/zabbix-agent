@@ -10,6 +10,6 @@ set /p COMPANY="COMPANY NAME:: "
 :: COMPANY:
 echo "YUO ENTER %COMPANY%"
 
-C:\wget.exe -O 
+C:\wget.exe -O C:\zabbix_agent.conf https://raw.githubusercontent.com/linuxbuh/zabbix-agent/main/conf/%COMPANY%/zabbix_agentd.conf
 
 pause 30
