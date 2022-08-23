@@ -17,4 +17,7 @@ msiexec /i C:\zabbix_agent-5.0.26-windows-amd64-openssl.msi /qn /norestart SERVE
 del C:\zabbix_agent-5.0.26-windows-amd64-openssl.msi
 del C:\zabbix-setup.bat
 
+net stop "Zabbix Agent"
+net start "Zabbix Agent"
+
 pause 30
