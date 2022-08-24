@@ -19,5 +19,3 @@ del C:\zabbix-setup.bat
 
 net stop "Zabbix Agent"
 net start "Zabbix Agent"
-
-pause 30
