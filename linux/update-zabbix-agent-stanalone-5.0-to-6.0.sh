@@ -121,7 +121,7 @@ echo -e "\e[1;33;4;44mВаш дистрибутив LINUX - $OSRELEASE\e[0m"
 		
 		yum remove -y zabbix-release zabbix-agent
 		
-		yum install -y deltarpm pcre2
+		yum install -y deltarpm pcre2 git
 			
 		if [ $VERSION_OSRELEASE = 9 ]; then
 			
@@ -156,12 +156,7 @@ echo -e "\e[1;33;4;44mВаш дистрибутив LINUX - $OSRELEASE\e[0m"
 
 					
 		fi
-		
-	
-			yum update
-			
-			yum install -y git
-			
+
 	fi
 
 
