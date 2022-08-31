@@ -117,6 +117,7 @@ echo -e "\e[1;33;4;44mВаш дистрибутив LINUX - $OSRELEASE\e[0m"
 #Устанавливаем какие пакеты качать для Rhel? Centos и производных
 	if [ $PAKETMANAGER = RPM ]; then
 		 
+		yum install -y deltarpm
 			
 		if [ $VERSION_OSRELEASE = 9 ]; then
 			
@@ -145,7 +146,7 @@ echo -e "\e[1;33;4;44mВаш дистрибутив LINUX - $OSRELEASE\e[0m"
 	
 			yum update
 			
-			yum install zabbix-agent git
+			yum install -y zabbix-agent git
 			
 	fi
 
