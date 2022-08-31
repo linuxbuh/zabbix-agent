@@ -153,7 +153,9 @@ echo -e "\e[1;33;4;44mВаш дистрибутив LINUX - $OSRELEASE\e[0m"
 
 			git clone https://github.com/linuxbuh/zabbix-agent.git
 
-			cp /root/zabbix-agent/linux/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf
+			cp -f /root/zabbix-agent/linux/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf
+			
+			cp -f /root/zabbix-agent/linux/zabbix_agentd.conf /etc/zabbix_agentd.conf
 
 			systemctl start zabbix-agent
 			
