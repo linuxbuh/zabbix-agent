@@ -1,5 +1,7 @@
 #!/bin/bash
 
+MAINPROXY=77.232.21.123,62.112.124.182,91.206.14.21,91.206.14.41,188.246.234.24
+
 cd /tmp
 
 #Определяем дистрибутив
@@ -165,7 +167,19 @@ echo -e "\e[1;33;4;44mВаш дистрибутив LINUX - $OSRELEASE\e[0m"
 			cp -f /tmp/zabbix-agent/linux/zabbix_agentd.conf /etc/zabbix/zabbix_agentd.conf
 			
 			cp -f /tmp/zabbix-agent/linux/zabbix_agentd.conf /etc/zabbix_agentd.conf
+			
+			echo -e "\e[1;31;42mВвод IP адреса ZABBIX PROXY для данной организации \e[0m"
+			echo
+			echo -n "Введите IP адрес ZABBIX PROXY для данной организации и нажмите [ENTER]: "
+			read PROXY
+			echo
+			echo -e "\e[1;31;42mВы ввели IP адрес ZABBIX PROXY $PROXY \e[0m"
 
+			PROXYSERVER=Server=$PROXY,$MAINPROXY
+
+			sed -i "s/Server=$MAINPROXY/$PROXYSERVER/" /etc/zabbix/zabbix_agentd.conf
+			
 			systemctl start zabbix-agent
 			
 			systemctl status zabbix-agent
+			
