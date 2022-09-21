@@ -1,2 +1,1 @@
-# zabbix-agent
-zabbix-agent
+# Скрипты установки zabbix-agent
